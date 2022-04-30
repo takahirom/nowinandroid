@@ -231,7 +231,7 @@ private fun AuthorToolbar(
 
 @Preview
 @Composable
-private fun AuthorBodyPreview() {
+fun AuthorBodyPreview() {
     MaterialTheme {
         LazyColumn {
             authorBody(
