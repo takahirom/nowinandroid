@@ -163,6 +163,7 @@ fun <A : ComponentActivity> AndroidComposeTestRule<ActivityScenarioRule<A>, A>.c
             }
         }
     }
+    this.activityRule.scenario.close()
 }
 
 @Composable
