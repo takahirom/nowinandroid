@@ -16,6 +16,7 @@
 
 package com.google.samples.apps.nowinandroid.uitesthiltmanifest
 
+import android.os.Bundle
 import androidx.activity.ComponentActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,4 +25,12 @@ import dagger.hilt.android.AndroidEntryPoint
  * for https://github.com/google/dagger/issues/3394
  */
 @AndroidEntryPoint
-class HiltComponentActivity : ComponentActivity()
+class HiltComponentActivity : ComponentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        // Use a no-action-bar theme to prevent overlapping with the action bar during tests.
+        // Theme_Material_Light_NoActionBar is the base theme used by the production app.
+        setTheme(android.R.style.Theme_Material_Light_NoActionBar)
+        super.onCreate(savedInstanceState)
+    }
+}
